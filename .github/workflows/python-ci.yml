@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   test:
-    name: Test on Python 3.10
+    name: Test on Python 3.8
     runs-on: ubuntu-latest
 
     steps:
