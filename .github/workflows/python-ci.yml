@@ -19,6 +19,9 @@ jobs:
     - name: List files in the directory
       run: ls
 
+    - name: List repository contents
+      run: ls $GITHUB_WROKSPACE
+
     - name: Install dependencies
       run: pip install -r requirements.txt
 
