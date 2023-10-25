@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   test:
-    name: Test on Python 3.8
+    name: Test on Python 3.12.0
     runs-on: ubuntu-latest
 
     steps:
@@ -14,7 +14,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8
+        python-version: 3.12.0
         
     - name: List files in the directory
       run: ls
