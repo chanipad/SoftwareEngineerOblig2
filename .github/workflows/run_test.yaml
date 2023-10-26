@@ -17,5 +17,5 @@ jobs:
         python-version: 3.12.0
 
     - name: Run tests with pytest
-      run: pytest test_leapyear.py
+      run: python -m unittest test_leapyear.py
 
