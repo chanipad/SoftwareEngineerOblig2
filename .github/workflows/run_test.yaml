@@ -17,11 +17,5 @@ jobs:
         python-version: 3.12.0
 
     - name: Run tests with pytest
-      run: pytest --junitxml=test-results/test-results.xml
+      run: pytest test_leapyear.py
 
-    - name: Upload test results
-      if: always()
-      uses: actions/upload-artifact@v2
-      with:
-        name: test-results
-        path: test-results
