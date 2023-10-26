@@ -1,24 +1,28 @@
+import unittest
+
 import leapyear
-import pytest
+#import pytest
 
-def test_leap_year_divisible_by_4_not_by_100():
-    assert leapyear.isLeapYear(2004) == True
-    assert leapyear.isLeapYear(2008) == True
-    assert leapyear.isLeapYear(2012) == True
-    assert leapyear.isLeapYear(2020) == True
+class TestLeapYear(unittest.TestCase):
+    def test_leap_year_divisible_by_4_not_by_100(self):
+        self.assertTrue(leapyear.isLeapYear(2004), 'This is a leapyear')
+        self.assertTrue(leapyear.isLeapYear(2008), 'This is a leapyear')
+        self.assertTrue(leapyear.isLeapYear(2012), 'This is a leapyear')
+        self.assertTrue(leapyear.isLeapYear(2020), 'This is a leapyear')
 
-def test_not_leap_year_divisible_by_100_not_by_400():
-    assert leapyear.isLeapYear(1700) == False
-    assert leapyear.isLeapYear(1800) == False
-    assert leapyear.isLeapYear(1900) == False
-    assert leapyear.isLeapYear(2100) == False
 
-def test_leap_year_divisible_by_400():
-    assert leapyear.isLeapYear(1600) == True
-    assert leapyear.isLeapYear(2000) == True
-    assert leapyear.isLeapYear(2400) == True
+    def test_not_leap_year_divisible_by_100_not_by_400(self):
+        self.assertFalse(leapyear.isLeapYear(1700), 'This is not a leapyear')
+        self.assertFalse(leapyear.isLeapYear(1800), 'This is not a leapyear')
+        self.assertFalse(leapyear.isLeapYear(1900), 'This is not a leapyear')
+        self.assertFalse(leapyear.isLeapYear(2100), 'This is not a leapyear')
 
-def test_not_leap_year():
-    assert leapyear.isLeapYear(2023) == False
-    assert leapyear.isLeapYear(2022) == False
-    assert leapyear.isLeapYear(2021) == False
+    def test_leap_year_divisible_by_400(self):
+        self.assertTrue(leapyear.isLeapYear(1600), 'this is a leapyear')
+        self.assertTrue(leapyear.isLeapYear(2000), 'this is a leapyear')
+        self.assertTrue(leapyear.isLeapYear(2400), 'this is a leapyear')
+    
+    def test_not_leap_year(self):
+        self.assertFalse(leapyear.isLeapYear(2023), 'this is not a leapyear')
+        self.assertFalse(leapyear.isLeapYear(2022), 'this is not a leapyear')
+        self.assertFalse(leapyear.isLeapYear(2021), 'this is not a leapyear')
